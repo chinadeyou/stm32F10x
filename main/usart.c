@@ -38,6 +38,14 @@ void usart2_init(void)
 	USART_Cmd(USART2, ENABLE);
 }
 
+void usart2_senddata(uint8_t data)
+{	
+	while (USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
+	USART_SendData(USART2, data);
+	while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);
+}
+
+
 /* USART3 初始化 */
 void USART3_Configuration(void)
 {
@@ -67,15 +75,10 @@ void USART3_Configuration(void)
 	USART_Cmd(USART3, ENABLE);
 }
 
-void usart2_senddata(uint8_t data)
-{
-	USART_SendData(USART2, data);
-	while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
-}
-
 void usart3_senddata(uint8_t data)
 {
+	while (USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
 	USART_SendData(USART3, data);
-	while(USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
+	while(USART_GetFlagStatus(USART3, USART_FLAG_TC) == RESET);
 }
 

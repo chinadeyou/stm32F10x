@@ -105,8 +105,9 @@ int main(void)
 	while(1)
 	{
 		delay_1ms(500);
-		led_flash();
-		adc_calculation();
+//		led_flash();
+//		adc_calculation();
+		printf("hello\r\n");
 
 	}
 }
@@ -114,8 +115,9 @@ int main(void)
 /* Retargets the C library printf function to the USART. */
 int fputc(int ch, FILE *f)
 {
-	USART_SendData(USART1, (uint8_t) ch);
 	while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+	USART_SendData(USART1, (uint8_t) ch);
+	while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET);
 	return ch;
 }
 
