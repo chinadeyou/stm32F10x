@@ -9,9 +9,10 @@
 #include <stdio.h>
 #include "systick.h"
 #include "usart.h"
-#include "i2c-simulate.h"
+#include "i2c1.h"
 #include "pwm.h"
 #include "adc.h"
+#include "bme280.h"
 
 /* --------宏定义--------------*/
 #define led_off() 	GPIO_SetBits(GPIOC, GPIO_Pin_13)
@@ -88,7 +89,7 @@ void adc_calculation(void)
 */
 int main(void)
 {
-	int i = 0;
+	uint8_t bme280_id = 0;
 	/* configure systick */
 	systick_config();
 	
@@ -98,16 +99,22 @@ int main(void)
 	
 	led_init();
 	
+	i2c1_init();
+	
+	bme280_read_id(&bme280_id);
+	
 //	timer1_init();
 
-	adc_init();
+//	adc_init();
+	
 	
 	while(1)
 	{
+		bme280_read_id(&bme280_id);
 		delay_1ms(500);
 //		led_flash();
 //		adc_calculation();
-		printf("hello\r\n");
+		printf("bme280_id = %#x\r\n", bme280_id);
 
 	}
 }
