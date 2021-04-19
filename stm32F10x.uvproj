@@ -139,7 +139,7 @@
             <RestoreTracepoints>1</RestoreTracepoints>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>13</TargetSelection>
+          <TargetSelection>14</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -153,7 +153,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
+            <Driver>BIN\CMSIS_AGDI.dll</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -395,7 +395,7 @@
             <File>
               <FileName>startup_stm32f10x_md.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\startup_stm32f10x_md.s</FilePath>
+              <FilePath>.\Libraries\CMSIS\DeviceSupport\startup\arm\startup_stm32f10x_md.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -591,6 +591,16 @@
               <FileName>i2c0-slave.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main\i2c0-slave.c</FilePath>
+            </File>
+            <File>
+              <FileName>bme280.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main\bme280.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main\i2c1.c</FilePath>
             </File>
           </Files>
         </Group>

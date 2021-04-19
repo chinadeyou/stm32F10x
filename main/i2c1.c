@@ -113,6 +113,7 @@ uint8_t i2c1_wait_ack(void)
 	delay_1us(I2C1_HALF_CYCLE);
 	
 	I2C1_SCL_SET();
+	delay_1us(I2C1_HALF_CYCLE);
 	
 	while(I2C1_READ_SDA())	/* 检测应答信号 */
 	{
@@ -178,7 +179,7 @@ void i2c1_transmit_byte(uint8_t data)
 	
 	for (i = 0; i < 8; i++)
 	{
-		if(data >> 7) {
+		if( data >> 7) {
 			I2C1_SDA_SET();
 		} else {
 			I2C1_SDA_RESET();
@@ -241,7 +242,7 @@ uint8_t i2c1_receive_byte(uint8_t ack)
 void i2c1_byte_write(uint8_t slave_addr, uint8_t offset, uint8_t value)
 {
 	i2c1_start();
-	i2c1_transmit_byte(slave_addr);
+	i2c1_transmit_byte(slave_addr << 1);
 	i2c1_wait_ack();
 	i2c1_transmit_byte(offset);
 	i2c1_wait_ack();
@@ -265,7 +266,7 @@ void i2c1_byte_read(uint8_t slave_addr, uint8_t offset, uint8_t *value)
 	i2c1_transmit_byte(offset);
 	i2c1_wait_ack();
 	i2c1_start();
-	i2c1_transmit_byte(slave_addr << 1 + 1);	//发送从机地址 + Read
+	i2c1_transmit_byte((slave_addr << 1) + 1);	//发送从机地址 + Read
 	i2c1_wait_ack();
 	*value = i2c1_receive_byte(0);				//接收数据并发送Nack
 	i2c1_stop();

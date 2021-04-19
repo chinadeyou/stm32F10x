@@ -14,5 +14,6 @@
 
 
 void bme280_read_id(uint8_t *id);
+void bme280_read_pressure(void);
 
 #endif /* __BME280_H_ */

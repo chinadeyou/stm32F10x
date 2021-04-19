@@ -115,6 +115,7 @@ int main(void)
 //		led_flash();
 //		adc_calculation();
 		printf("bme280_id = %#x\r\n", bme280_id);
+		bme280_read_pressure();
 
 	}
 }
