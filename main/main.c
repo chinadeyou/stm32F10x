@@ -90,6 +90,7 @@ void adc_calculation(void)
 int main(void)
 {
 	uint8_t bme280_id = 0;
+
 	/* configure systick */
 	systick_config();
 	
