@@ -6,8 +6,8 @@ DebugConfig/
 RTE/
 *.dep
 *.bak
-stm32F10x.uvgui.deyou
-stm32F10x.uvguix.deyou
+stm32F10x.uvgui.*
+stm32F10x.uvguix.*
 stm32F10x.uvopt
 JlinkLog.txt
 JLinkSettings.ini
