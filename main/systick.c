@@ -34,9 +34,9 @@ void systick_config(void)
   */
 void delay_1ms(__IO uint32_t count)
 { 
-	TimingDelay = count*1000;
+    TimingDelay = count*1000;
 
-	while(TimingDelay != 0);
+    while(TimingDelay != 0);
 }
 
 /**
@@ -46,9 +46,9 @@ void delay_1ms(__IO uint32_t count)
   */
 void delay_1us(__IO uint32_t count)
 { 
-	TimingDelay = count;
+    TimingDelay = count;
 
-	while(TimingDelay != 0);
+    while(TimingDelay != 0);
 }
 
 /**
@@ -58,10 +58,10 @@ void delay_1us(__IO uint32_t count)
   */
 void TimingDelay_Decrement(void)
 {
-	if (TimingDelay != 0x00)
-	{ 
-		TimingDelay--;
-	}
+    if (TimingDelay != 0x00)
+    { 
+    	TimingDelay--;
+    }
 } 
 
 

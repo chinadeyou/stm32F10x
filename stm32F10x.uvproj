@@ -573,11 +573,6 @@
               <FilePath>.\main\i2c-simulate.c</FilePath>
             </File>
             <File>
-              <FileName>i2c1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main\i2c1.c</FilePath>
-            </File>
-            <File>
               <FileName>i2c-hardware.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main\i2c-hardware.c</FilePath>
@@ -601,6 +596,11 @@
               <FileName>bme280.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main\bme280.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main\i2c1.c</FilePath>
             </File>
           </Files>
         </Group>

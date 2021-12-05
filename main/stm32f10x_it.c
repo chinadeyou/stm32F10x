@@ -163,7 +163,7 @@ void EXTI0_IRQHandler(void)
 
 void SysTick_Handler(void)
 {
-	TimingDelay_Decrement();	
+    TimingDelay_Decrement();	
 }
 
 /******************************************************************************/

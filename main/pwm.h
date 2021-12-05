@@ -1,6 +1,6 @@
 /*!
-	\file    pwm.h
-	\brief   the header of pwm.c
+    \file    pwm.h
+    \brief   the header of pwm.c
 */
 
 #ifndef __PWM_H
